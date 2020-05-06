@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Venta de producto</title>
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+ 
+</head>
+<body>
+	
+	<br><br>
+	<div class="container">
+		<h1>Ingresar producto</h1>	
+	
+		<form th:action="@{/formProducto}" th:object="${producto}" method="post">
+		  <div class="form-group">
+		    <label for="exampleFormControlInput1">Nombre del producto:</label>
+		    <input type="text" class="form-control" id="exampleFormControlInput1" th:field="*{nombre}">
+		    <span th:errors="*{nombre}" style = "color: #BF2121"></span>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlTextarea1">Descripcion del producto:</label>
+		    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" th:field="*{descripcion}"></textarea>
+		    <span th:errors="*{descripcion}" style = "color: #BF2121"></span>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlInput1">Precio del producto:</label>
+		    <input type="text" class="form-control" id="exampleFormControlInput1" th:field="*{precio}">
+		    <span th:errors="*{precio}" style = "color: #BF2121"></span>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleFormControlInput1">Fecha de vencimiento del producto:</label>
+		    <input type="text" class="form-control" id="exampleFormControlInput1" th:field="*{vencimiento}">
+		    <span th:errors="*{vencimiento}" style = "color: #BF2121"></span>
+		  </div>
+		  <input type="submit" value="Agregar producto" class="btn btn-primary">
+		</form>
+	</div>
+	
+	  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+	
+</body>
+</html>
